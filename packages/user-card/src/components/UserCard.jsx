@@ -20,6 +20,11 @@ const Card = styled.div`
     min-width: 350px;
     min-height: auto;
   }
+  @media (max-width: 385px) {
+    min-width: 0;
+    width: 100%;
+    max-width: 350px;
+  }
 `;
 
 const Avatar = styled.img`

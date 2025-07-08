@@ -21,12 +21,47 @@ const MainContent = styled.main`
   justify-content: center;
   align-items: center;
   overflow-y: auto;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
     align-items: flex-start;
     padding: 16px 4px 16px 4px;
     overflow-y: visible;
+    max-width: 100%;
+    margin: 0;
+  }
+`;
+
+const UserCardContainer = styled.div`
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 769px) {
+    max-width: none;
+    width: 33%;
+    justify-content: flex-end;
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+`;
+
+const ContentBarContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: 769px) {
+    max-width: none;
+    width: 67%;
+    justify-content: flex-start;
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
   }
 `;
 
@@ -38,12 +73,12 @@ export default function App() {
     <Wrapper>
       <Header />
       <MainContent>
-        {/* <Suspense fallback={<div>Loading User Card...</div>}> */}
-        <UserCard />
-        {/* </Suspense>
-        <Suspense fallback={<div>Loading Content Bar...</div>}> */}
-        <ContentBar />
-        {/* </Suspense> */}
+        <UserCardContainer>
+          <UserCard />
+        </UserCardContainer>
+        <ContentBarContainer>
+          <ContentBar />
+        </ContentBarContainer>
       </MainContent>
     </Wrapper>
   );
