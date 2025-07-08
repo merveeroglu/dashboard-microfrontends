@@ -8,8 +8,8 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
   overflow: hidden;
-    @media (max-width: 768px) {
-      overflow: auto;
+  @media (max-width: 768px) {
+    overflow: auto;
   }
 `;
 
@@ -24,6 +24,9 @@ const MainContent = styled.main`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
+    align-items: flex-start;
+    padding: 16px 4px 16px 4px;
+    overflow-y: visible;
   }
 `;
 
