@@ -11,7 +11,17 @@ export default defineConfig({
       exposes: {
         "./ContentBar": "./src/components/ContentBar.jsx",
       },
-      shared: ["react", "react-dom"],
+      // shared: ["react", "react-dom"],
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+      },
     }),
   ],
   build: {
@@ -19,7 +29,7 @@ export default defineConfig({
     outDir: "dist",
     minify: false,
   },
-  server: {
-    port: 3002,
-  },
+  // server: {
+  //   port: 3002,
+  // },
 });

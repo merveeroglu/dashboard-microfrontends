@@ -12,7 +12,17 @@ export default defineConfig({
       exposes: {
         "./UserCard": "./src/components/UserCard.jsx",
       },
-      shared: ["react", "react-dom"],
+      // shared: ["react", "react-dom"],
+       shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+      },
     }),
   ],
   build: {
@@ -20,7 +30,7 @@ export default defineConfig({
     outDir: "dist",
     minify: false,
   },
-  server: {
-    port: 3001,
-  },
+  // server: {
+  //   port: 3001,
+  // },
 });

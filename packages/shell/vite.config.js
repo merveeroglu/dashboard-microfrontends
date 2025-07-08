@@ -8,16 +8,28 @@ export default defineConfig({
     federation({
       name: "shell",
       remotes: {
-        userCard: "http://localhost:3001/assets/remoteEntry.js",
-        contentBar: "http://localhost:3002/assets/remoteEntry.js",
+        userCard: "http://localhost:4173/assets/remoteEntry.js",
+        contentBar: "http://localhost:4174/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      // shared: ["react", "react-dom"],
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "^19.1.0",
+        },
+      },
     }),
   ],
   build: {
     target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
   },
-  server: {
-    port: 3000,
-  },
+  // server: {
+  //   port: 3000,
+  // },
 });

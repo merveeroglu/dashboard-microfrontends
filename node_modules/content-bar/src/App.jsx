@@ -1,10 +1,11 @@
 import './App.css'
+import ContentBar from './components/ContentBar'
 
 function App() {
 
   return (
     <>
-      contentbar
+      <ContentBar/>
     </>
   )
 }
