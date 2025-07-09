@@ -1,45 +1,34 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const HeaderBar = styled.header`
-  /* width: 100%; */
-  background: #0a7cff;
-  color: #fff;
+const HeaderWrapper = styled.header`
+  width: 100%;
+  min-height: 64px;
+  background-color: #007bff;
+  color: white;
   padding: 0 32px;
-  height: 64px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  font-size: 1.25rem;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(10, 124, 255, 0.08);
-  @media (max-width: 600px) {
-    padding: 0 12px;
-    font-size: 1rem;
-    height: 52px;
-  }
+  align-items: center;
+  box-sizing: border-box;
 `;
 
-const ProfileButton = styled.button`
-  background: transparent;
-  border: none;
-  color: #fff;
+const AppTitle = styled.h1`
   font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: background 0.2s;
-  &:hover {
-    background: rgba(255,255,255,0.12);
-  }
 `;
 
-export default function Header() {
+const Profile = styled.span`
+  font-size: 1rem;
+  cursor: pointer;
+`;
+
+const Header = () => {
   return (
-    <HeaderBar>
-      <span>My Microfrontend App</span>
-      <ProfileButton>Profil</ProfileButton>
-    </HeaderBar>
+    <HeaderWrapper>
+      <AppTitle>My Microfrontend App</AppTitle>
+      <Profile>Profil</Profile>
+    </HeaderWrapper>
   );
-}
+};
+
+export default Header;
