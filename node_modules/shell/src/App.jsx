@@ -1,67 +1,59 @@
-import React from "react"; //, { Suspense }
-import Header from "./components/Header";
+import React from "react";
 import styled from "styled-components";
+import Header from "./components/Header";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  @media (max-width: 768px) {
-    overflow: auto;
-  }
+const Layout = styled.div`
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 `;
 
-const MainContent = styled.main`
+const Main = styled.main`
   display: flex;
-  flex: 1;
-  padding: 30px;
-  gap: 50px;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  width: 100%;
-  max-width: 1100px;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 40px 0;
+  max-width: 1200px;
   margin: 0 auto;
-  @media (max-width: 768px) {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  @media (max-width: 1024px) {
     flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 16px 4px 16px 4px;
-    overflow-y: visible;
-    max-width: 100%;
-    margin: 0;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
   }
 `;
 
 const UserCardContainer = styled.div`
+  flex: 1 1 320px;
+  max-width: 400px;
   width: 100%;
-  max-width: 320px;
   display: flex;
   justify-content: center;
-  @media (min-width: 769px) {
-    max-width: none;
-    width: 33%;
-    justify-content: flex-end;
-  }
-  @media (max-width: 768px) {
-    margin: 0 auto;
+  /* overflow-x: hidden; */
+  box-sizing: border-box;
+  @media (max-width: 1024px) {
+    max-width: 500px;
   }
 `;
 
 const ContentBarContainer = styled.div`
+  flex: 2 1 600px;
+  max-width: 700px;
   width: 100%;
-  max-width: 400px;
   display: flex;
   justify-content: center;
-  @media (min-width: 769px) {
-    max-width: none;
-    width: 67%;
-    justify-content: flex-start;
-  }
-  @media (max-width: 768px) {
-    margin: 0 auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  @media (max-width: 1024px) {
+    max-width: 500px;
   }
 `;
 
@@ -70,16 +62,16 @@ const ContentBar = React.lazy(() => import("contentBar/ContentBar"));
 
 export default function App() {
   return (
-    <Wrapper>
+    <Layout>
       <Header />
-      <MainContent>
+      <Main>
         <UserCardContainer>
           <UserCard />
         </UserCardContainer>
         <ContentBarContainer>
           <ContentBar />
         </ContentBarContainer>
-      </MainContent>
-    </Wrapper>
+      </Main>
+    </Layout>
   );
 }
