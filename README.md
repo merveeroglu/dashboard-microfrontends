@@ -14,6 +14,3 @@ Bu proje, mikro-frontend mimarisiyle geliştirilmiş bir dashboard uygulamasıd�
 ## Kullanım Örnekleri
 - Kullanıcı kartı ve içerik barı gibi modüller bağımsız olarak geliştirilebilir ve shell uygulamasında entegre şekilde çalışır.
 - Her modül kendi başına çalıştırılabilir veya ana shell üzerinden mikro-frontend olarak yüklenebilir.
-
-## Demo Linkleri
-- 
